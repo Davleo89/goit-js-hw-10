@@ -7,15 +7,33 @@
   width: 100%;
   height: auto;
   max-width: 450px;
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: 7px 8px 10px rgb(0, 0, 0, 0.5);
+}
+
+.breed-select{
+  border-radius: 8px;
+  margin: auto;
+  display: flex;
+}
+
+.breed_description{
+  max-width: 500px;
 }
 
 .breed-details {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-left: 20px;
   
 }
 
+.breed_name{
+  font-size: 28px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
 
 .loader {
     width: 48px;

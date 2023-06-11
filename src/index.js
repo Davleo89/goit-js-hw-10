@@ -8,6 +8,7 @@ const loader = document.querySelector('.loader');
 const msg_error = document.querySelector('.error');
 const catInfo = document.querySelector('.cat-info');
 const textError = msg_error.textContent;
+msg_error.style.display = 'none'
 
 let storedBreeds = [];
 
@@ -42,7 +43,6 @@ fetch(API_URL, {
   .catch(function (error) {
     console.log(error);
     loader.style.display = 'none';
-    msg_error.style.display = 'none';
     Notiflix.Notify.failure(textError);
   });
   
@@ -51,8 +51,9 @@ fetch(API_URL, {
     catInfo.innerHTML = `
       <img src="${breed.image.url}" class="breed_image" />
       <div class="breed-details">
-      <p id="breed_json">${breed.temperament}</p>
-      <a id="wiki_link" href="${breed.wikipedia_url}">${breed.wikipedia_url}</a>
+      <p class="breed_name">${breed.name}</p>
+      <p class="breed_description" href="${breed.wikipedia_url}">${breed.description}</p>
+      <p class="breed_json">${breed.temperament}</p>
       </div>`;
   }
   
